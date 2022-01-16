@@ -8,8 +8,7 @@ const App = () => {
     width: 800,
   });
 
-  useEffect(() => { 
-    //${YOUR_GATEWAY_URL}/ipfs/${APP_CID}?object=${3D_MODEL_CID}&filename=${MODEL_FILENAME_WITH_EXTENSION}
+  useEffect(() => {
     // https://10xit-inc.github.io/3d-viewer?object=${3D_MODEL_CID}&filename=${MODEL_FILENAME_WITH_EXTENSION}
     //http://localhost:3000/?object=QmX4GncouGMa8ATMfwbV464WJbJTWc85c1Ptafc6N6nrDT&filename=cube.glb
     if (window.OV) {
@@ -21,12 +20,9 @@ const App = () => {
       if (name) {
         setFilename(name);
       }
-      // const baseUrl =
-      //   `${window.location.origin}${window.location.pathname}/`.split(
-      //     "3d-viewer"
-      //   )[0];
-      // console.log("BASE URL: ", baseUrl);
-      const url = `https://ipfs.io/ipfs/${object}?filename=${name ? name : filename}`;
+      const url = `https://ipfs.io/ipfs/${object}?filename=${
+        name ? name : filename
+      }`;
       console.log("Full URL: ", url);
       setUrl(url);
       return () => {
